@@ -1,150 +1,130 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XTRACE - Seguridad y Cumplimiento Minero</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #1e293b;
-            color: #f8fafc;
-        }
-        .text-accent { color: #06b6d4; }
-        .bg-primary { background-color: #1e293b; }
-        .text-light { color: #f8fafc; }
-        .btn-primary {
-            background-color: #06b6d4;
-            color: #1e293b;
-            transition: all 0.3s ease;
-        }
-        .btn-primary:hover {
-            background-color: #f8fafc;
-        }
-        .panel {
-            min-height: 500px;
-        }
-    </style>
-</head>
-<body>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ricardo Ross — Execution under complexity</title>
 
-    <!-- Navbar -->
-    <header class="bg-primary text-light py-4 border-b border-gray-700">
-        <div class="container mx-auto flex justify-between items-center px-6">
-            <div class="flex items-center space-x-2">
-                <!-- XTRACE Logo SVG -->
-                <svg class="w-8 h-8 text-accent" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm-.5 12h-2V7h2V14zM12.5 14h-2V7h2V14zM15 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                </svg>
-                <span class="text-2xl font-extrabold tracking-wider text-accent">XTRACE</span>
-            </div>
-            <nav class="hidden md:block">
-                <a href="#solucion" class="px-4 hover:text-accent transition-colors duration-300">La Solución</a>
-                <a href="#beneficios" class="px-4 hover:text-accent transition-colors duration-300">Beneficios Clave</a>
-                <a href="#contacto" class="px-4 hover:text-accent transition-colors duration-300">Contacto</a>
-            </nav>
-        </div>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="grid" aria-hidden="true"></div>
+
+  <main class="wrap">
+    <header class="topbar">
+      <div class="badge">
+        <span class="pulse" aria-hidden="true"></span>
+        <span id="topBadge">DEEP-TECH · BOARD LEVEL · EJECUCIÓN</span>
+      </div>
+
+      <div class="lang" aria-label="Cambiar idioma">
+        <button id="btnES" class="active" type="button" aria-pressed="true">ES</button>
+        <button id="btnEN" type="button" aria-pressed="false">EN</button>
+      </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="bg-cover bg-center min-h-screen flex items-center justify-center text-center" style="background-image: linear-gradient(to bottom, rgba(30, 41, 59, 0.9), rgba(0, 0, 0, 0.8)), url('images/hero-background.jpg');">
-        <div class="px-6 max-w-4xl">
-            <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-4 text-accent">La Seguridad es un Activo. El Cumplimiento es una Ventaja.</h1>
-            <p class="text-xl md:text-2xl mb-8 font-light">
-                Optimiza la verificación de credenciales y asegura la trazabilidad del personal en cada reunión de cuadrilla.
-            </p>
-            <a href="#contacto" class="px-8 py-4 rounded-full btn-primary text-lg font-bold shadow-xl hover:-translate-y-1 transform transition-transform duration-300">
-                Solicita una Demostración Estratégica
-            </a>
+    <section class="hero" aria-label="Presentación">
+      <div class="panel heroLeft">
+        <p class="kicker" id="heroKicker">Perfil</p>
+        <h1 id="name">Ricardo Ross</h1>
+
+        <div class="heroSplit" aria-label="Quién soy y qué hago">
+          <div class="heroBlock">
+            <p class="heroLabel" id="whoLabel">Quién soy</p>
+            <p class="heroText" id="whoText"></p>
+            <!-- Slot opcional para una línea muy “LinkedIn About” -->
+            <p class="heroMicro" id="whoMicro"></p>
+          </div>
+
+          <div class="heroBlock">
+            <p class="heroLabel" id="whatLabel">Qué hago</p>
+            <p class="heroText strong" id="whatText"></p>
+          </div>
         </div>
+
+        <div class="signalRow" aria-label="Señales clave">
+          <div class="signal" id="sig1"><i aria-hidden="true"></i><span></span></div>
+          <div class="signal" id="sig2"><i aria-hidden="true"></i><span></span></div>
+          <div class="signal" id="sig3"><i aria-hidden="true"></i><span></span></div>
+        </div>
+
+        <div class="cta" aria-label="Contactar">
+          <div class="ctaLeft">
+            <p class="ctaTitle" id="ctaTitle">Contacto</p>
+            <p class="ctaNote" id="ctaNote">Respuesta rápida por WhatsApp o email. LinkedIn para trayectoria.</p>
+          </div>
+          <div class="ctaActions">
+            <a class="btn" id="ctaEmail" href="mailto:rossricardo@gmail.com">Email</a>
+            <a class="btn secondary" id="ctaWhats" href="https://wa.me/306948110134" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn ghost" id="ctaLinkedIn" href="https://www.linkedin.com/in/rossricardo" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel heroRight" aria-label="Foto">
+        <img src="profile.jpg" alt="Foto de perfil de Ricardo Ross" />
+      </div>
     </section>
 
-    <!-- Solution Section -->
-    <section id="solucion" class="py-20 bg-gray-900 text-light">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-16 text-accent">XTRACE en Acción: Reduciendo Riesgos, Aumentando el Control</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-                <div>
-                    <img src="images/app-screenshot.jpg" alt="Captura de pantalla de la aplicación móvil de XTRACE" class="rounded-2xl shadow-xl transform transition-transform hover:scale-105">
-                </div>
-                <div>
-                    <h3 class="text-3xl font-bold mb-4">Verificación Instantánea, Trazabilidad Total.</h3>
-                    <p class="mb-4 text-lg">
-                        Olvídate de los procesos manuales propensos a errores. Con XTRACE, la verificación de credenciales es tan simple como un escaneo. Cada acción se registra y se convierte en un dato auditable, dándole a tu equipo de gestión una visibilidad completa sobre el cumplimiento y las asistencias.
-                    </p>
-                    <ul class="space-y-4 text-lg">
-                        <li class="flex items-center space-x-3">
-                            <span class="text-accent">&#10003;</span>
-                            <span>Diagnóstico de Credenciales en Segundos.</span>
-                        </li>
-                        <li class="flex items-center space-x-3">
-                            <span class="text-accent">&#10003;</span>
-                            <span>Alertas Inteligentes sobre Documentación Vencida.</span>
-                        </li>
-                        <li class="flex items-center space-x-3">
-                            <span class="text-accent">&#10003;</span>
-                            <span>Mensajería Automatizada para Notificaciones.</span>
-                        </li>
-                    </ul>
-                </div>
+    <section class="main" aria-label="Áreas de impacto">
+      <div class="panel rail">
+        <div class="railHead">
+          <div id="railTitle">Áreas de impacto</div>
+          <div class="hint" id="railHint">Hover / Tap</div>
+        </div>
+
+        <div class="cards" role="tablist" aria-label="Seleccionar un área">
+          <button class="card active" role="tab" aria-selected="true" data-key="mi" type="button">
+            <div class="cardTop">
+              <div>
+                <p class="cardTitle" id="miTitle">MicroInnovación tecnológica</p>
+                <p class="cardSub" id="miSub">Problemas complejos → resolubles & escalables</p>
+              </div>
+              <span class="sigmark" aria-hidden="true"></span>
             </div>
-        </div>
-    </section>
+          </button>
 
-    <!-- Key Benefits Section -->
-    <section id="beneficios" class="py-20 bg-gray-800 text-light">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-16 text-accent">Beneficios Clave para la Gestión Operativa</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-                <div class="text-center p-8 rounded-2xl bg-gray-700 shadow-xl transform transition-transform hover:scale-105">
-                    <img src="images/security.jpg" alt="Ícono de seguridad" class="w-24 h-24 mx-auto mb-6 rounded-full">
-                    <h3 class="text-2xl font-bold mb-2">Reducción de Riesgos</h3>
-                    <p class="text-sm">Mitiga los riesgos de seguridad al asegurar que solo el personal calificado y certificado esté en el sitio. Una operación segura es una operación rentable.</p>
-                </div>
-                <div class="text-center p-8 rounded-2xl bg-gray-700 shadow-xl transform transition-transform hover:scale-105">
-                    <img src="images/productivity.jpg" alt="Ícono de productividad" class="w-24 h-24 mx-auto mb-6 rounded-full">
-                    <h3 class="text-2xl font-bold mb-2">Optimización de la Productividad</h3>
-                    <p class="text-sm">Elimina los tiempos de inactividad causados por la verificación manual. Los equipos pueden iniciar sus tareas de inmediato, mejorando la eficiencia general.</p>
-                </div>
-                <div class="text-center p-8 rounded-2xl bg-gray-700 shadow-xl transform transition-transform hover:scale-105">
-                    <img src="images/data.jpg" alt="Ícono de datos" class="w-24 h-24 mx-auto mb-6 rounded-full">
-                    <h3 class="text-2xl font-bold mb-2">Inteligencia Operacional</h3>
-                    <p class="text-sm">Accede a datos en tiempo real sobre la asistencia y el cumplimiento del personal. Utiliza esta información para tomar decisiones estratégicas y proactivas.</p>
-                </div>
+          <button class="card" role="tab" aria-selected="false" data-key="oe" type="button">
+            <div class="cardTop">
+              <div>
+                <p class="cardTitle" id="oeTitle">Orquestación de ejecución estratégica</p>
+                <p class="cardSub" id="oeSub">Estrategia íntegra → acción sostenida</p>
+              </div>
+              <span class="sigmark" aria-hidden="true"></span>
             </div>
-        </div>
-    </section>
+          </button>
 
-    <!-- Contact Section -->
-    <section id="contacto" class="py-20 bg-primary text-light">
-        <div class="container mx-auto px-6 max-w-2xl text-center">
-            <h2 class="text-4xl font-bold mb-4 text-accent">Toma el Control. Contáctanos Hoy.</h2>
-            <p class="mb-8">Eleva la seguridad y la eficiencia de tu operación minera con XTRACE. Solicita una demostración personalizada para ver el valor de nuestra solución en acción.</p>
-            <form class="space-y-6">
-                <input type="text" placeholder="Nombre completo" class="w-full p-4 rounded-lg bg-gray-700 text-light placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent">
-                <input type="email" placeholder="Correo electrónico corporativo" class="w-full p-4 rounded-lg bg-gray-700 text-light placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent">
-                <textarea placeholder="Mensaje o pregunta (opcional)" rows="4" class="w-full p-4 rounded-lg bg-gray-700 text-light placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent"></textarea>
-                <button type="submit" class="w-full py-4 rounded-full btn-primary text-lg font-bold shadow-xl hover:-translate-y-1 transform transition-transform duration-300">
-                    Enviar Solicitud
-                </button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-light py-8 text-center">
-        <div class="container mx-auto px-6">
-            <p>&copy; 2024 XTRACE. Todos los derechos reservados.</p>
-            <div class="mt-4 flex justify-center space-x-4 text-sm">
-                <a href="#" class="hover:text-accent transition-colors duration-300">Política de Privacidad</a>
-                <a href="#" class="hover:text-accent transition-colors duration-300">Términos de Servicio</a>
+          <button class="card" role="tab" aria-selected="false" data-key="rl" type="button">
+            <div class="cardTop">
+              <div>
+                <p class="cardTitle" id="rlTitle">Reinvención y liderazgo organizacional</p>
+                <p class="cardSub" id="rlSub">Cambios profundos → decisiones con criterio</p>
+              </div>
+              <span class="sigmark" aria-hidden="true"></span>
             </div>
+          </button>
         </div>
+      </div>
+
+      <div class="panel detail" aria-live="polite" aria-label="Detalle">
+        <p class="detailKicker" id="detailKicker">Qué logro</p>
+        <h3 class="detailTitle" id="detailTitle"></h3>
+        <p class="detailValue" id="detailValue"></p>
+        <p class="detailText" id="detailText"></p>
+        <ul class="outcomes" id="detailOutcomes"></ul>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footline" id="footerLine"></div>
     </footer>
+  </main>
 
+  <script src="app.js"></script>
 </body>
 </html>
